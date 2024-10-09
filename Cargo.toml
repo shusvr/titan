@@ -1,0 +1,20 @@
+[package]
+name = "titan"
+description = "TUN/TAP library"
+version = "0.1.0"
+edition = "2021"
+authors = ["Vladimir Shustrov <shustrov.vladimir.22@yandex.ru>"]
+license = "MIT"
+
+[dependencies]
+tokio = { version = "1.40.0", features = ["net"] }
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2.150"
+
+[dev-dependencies]
+hex = "0.4.3"
+tokio = { version = "1.40.0", features = ["rt", "time", "macros", "io-util"] }
+
+[lints.rust]
+missing_docs = "warn"
